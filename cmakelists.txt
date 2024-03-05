@@ -1,0 +1,24 @@
+cmake_minimum_required(VERSION 3.13)
+project(HazlLib)               
+
+set(CMAKE_CXX_STANDARD 17)            # Enable c++17 standard
+
+set(SOURCE_FILES dllmain.cpp hazldll.h)
+add_executable(HazlLib ${SOURCE_FILES})
+INCLUDE_DIRECTORIES(external\\d2mooheaders\\include\\)
+INCLUDE_DIRECTORIES(external\\d2mooheaders\\include\\D2CMP)
+INCLUDE_DIRECTORIES(external\\d2mooheaders\\include\\D2Common)
+INCLUDE_DIRECTORIES(external\\d2mooheaders\\include\\D2CommonDefinitions)
+INCLUDE_DIRECTORIES(external\\d2mooheaders\\include\\D2Game)
+INCLUDE_DIRECTORIES(external\\d2mooheaders\\include\\D2Gfx)
+INCLUDE_DIRECTORIES(external\\d2mooheaders\\include\\D2Hell)
+INCLUDE_DIRECTORIES(external\\d2mooheaders\\include\\D2Lang)
+INCLUDE_DIRECTORIES(external\\d2mooheaders\\include\\D2MCPClient)
+INCLUDE_DIRECTORIES(external\\d2mooheaders\\include\\D2Net)
+INCLUDE_DIRECTORIES(external\\d2mooheaders\\include\\D2Sound)
+INCLUDE_DIRECTORIES(external\\d2mooheaders\\include\\D2Win)
+INCLUDE_DIRECTORIES(external\\d2mooheaders\\include\\Fog)
+INCLUDE_DIRECTORIES(external\\d2mooheaders\\include\\Game)
+INCLUDE_DIRECTORIES(external\\d2mooheaders\\include\\Storm)
+
+target_link_libraries(HazlLib Detours)
