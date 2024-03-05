@@ -1,4 +1,4 @@
-#include "dllmain.h"
+#include "hazldll.h"
 #include "detours/detours.h"
 #include <map>
 #include <ranges>
