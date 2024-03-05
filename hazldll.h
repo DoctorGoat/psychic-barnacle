@@ -15,14 +15,3 @@
 #include <windows.h>
 #include <iostream>
 #include <fstream>
-
-struct hazlpatch {
-	std::string targetdll;
-	DWORD offset;
-	PVOID newFunc;
-
-	hazlpatch(const std::string& targetdll, const DWORD& offset, const PVOID& newFunc)
-		: targetdll(targetdll), offset(offset), newFunc(newFunc)
-	{
-	}
-};
