@@ -14,22 +14,14 @@
  magic and make sure there's an export def being loaded by VS
 
 # STEP 3: Config
- VCPKG: vcpkg install detours 
- get nop's d2mooheaders or d2moo,
- add all that to the dependencies. 
- you might need c++17 and vc17
- but I might have set them for a library I abandoned. set the vcpkg
- install folder.
- add include folders, i ended up with fog/storm/d2game/d2lang just to
- pull strcat from Unicode (the bastardized Diablo 2 Unicode) and the
- linker settings are tedious as well. set the def while you're there
+ VCPKG: vcpkg install detours. get nop's d2mooheaders or d2moo.
+
+ add all that to the dependencies. set the vcpkg
+ install folder. add include folders, i ended up with fog/storm/d2game/d2lang just to
+ pull strcat from Unicode (the bastardized Diablo 2 Unicode) and the linker settings are tedious as well. set the def while you're there
 
 # STEP 4: Actually Doing Something
- hook LoadLibraryA and LoadLibraryW, we don't need the others
- watch loadlibrary for something we want to patch like d2game
- this is tricky because the game will do recursive reads of dlls
- otoh i don't see the problem if we just do DetourFindPayload or whatever
- and just skip that file if it's a problem. I'm not quite sure 
- how I'm going to handle memory addresses but I can probably do like
- locations["goku.dll"] + 80085 to do goku.dll+80085..
+ hook LoadLibraryA and LoadLibraryW, we don't need the others. watch loadlibrary for something we want to patch like d2game.
+ this is tricky because the game will do recursive reads of dlls. otoh i don't see the problem if we just do DetourFindPayload or whatever
+ and just skip that file if it's true. I'm not quite sure how I'm going to handle memory addresses, I can probably do like locations["goku.dll"] + 80085 to do goku.dll+80085..
  Ordinals are off the table for now until I become smarter.
